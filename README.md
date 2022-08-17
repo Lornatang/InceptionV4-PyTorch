@@ -42,8 +42,8 @@ Both training and testing only need to modify the `config.py` file.
 ### Test
 
 - line 29: `model_arch_name` change to `inception_v4`.
-- line 31: `model_mean_parameters` change to `1000`.
-- line 32: `model_mean_parameters` change to `1000`.
+- line 31: `model_mean_parameters` change to `[0.485, 0.456, 0.406]`.
+- line 32: `model_std_parameters` change to `[0.229, 0.224, 0.225]`.
 - line 34: `model_num_classes` change to `1000`.
 - line 36: `mode` change to `test`.
 - line 91: `model_weights_path` change to `./results/pretrained_models/InceptionV4-ImageNet_1K-2069673f.pth.tar`.
@@ -55,8 +55,8 @@ python3 test.py
 ### Train model
 
 - line 29: `model_arch_name` change to `inception_v4`.
-- line 31: `model_mean_parameters` change to `1000`.
-- line 32: `model_mean_parameters` change to `1000`.
+- line 31: `model_mean_parameters` change to `[0.485, 0.456, 0.406]`.
+- line 32: `model_std_parameters` change to `[0.229, 0.224, 0.225]`.
 - line 34: `model_num_classes` change to `1000`.
 - line 36: `mode` change to `train`.
 - line 50: `pretrained_model_weights_path` change to `./results/pretrained_models/InceptionV4-ImageNet_1K-2069673f.pth.tar`.
@@ -68,8 +68,8 @@ python3 train.py
 ### Resume train model
 
 - line 29: `model_arch_name` change to `inception_v4`.
-- line 31: `model_mean_parameters` change to `1000`.
-- line 32: `model_mean_parameters` change to `1000`.
+- line 31: `model_mean_parameters` change to `[0.485, 0.456, 0.406]`.
+- line 32: `model_std_parameters` change to `[0.229, 0.224, 0.225]`.
 - line 34: `model_num_classes` change to `1000`.
 - line 36: `mode` change to `train`.
 - line 53: `resume` change to `./samples/inception_v4-ImageNet_1K/epoch_xxx.pth.tar`.
