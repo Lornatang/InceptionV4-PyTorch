@@ -41,10 +41,12 @@ Both training and testing only need to modify the `config.py` file.
 
 ### Test
 
-- line 29: `model_arch_name` change to `inception_v3`.
-- line 31: `model_num_classes` change to `1000`.
-- line 33: `mode` change to `test`.
-- line 88: `model_weights_path` change to `./results/pretrained_models/InceptionV3-ImageNet_1K-b65ce284.pth.tar`.
+- line 29: `model_arch_name` change to `inception_v4`.
+- line 31: `model_mean_parameters` change to `1000`.
+- line 32: `model_mean_parameters` change to `1000`.
+- line 34: `model_num_classes` change to `1000`.
+- line 36: `mode` change to `test`.
+- line 91: `model_weights_path` change to `./results/pretrained_models/InceptionV4-ImageNet_1K-2069673f.pth.tar`.
 
 ```bash
 python3 test.py
@@ -52,10 +54,12 @@ python3 test.py
 
 ### Train model
 
-- line 29: `model_arch_name` change to `inception_v3`.
-- line 31: `model_num_classes` change to `1000`.
-- line 33: `mode` change to `train`.
-- line 47: `pretrained_model_weights_path` change to `./results/pretrained_models/InceptionV3-ImageNet_1K-b65ce284.pth.tar`.
+- line 29: `model_arch_name` change to `inception_v4`.
+- line 31: `model_mean_parameters` change to `1000`.
+- line 32: `model_mean_parameters` change to `1000`.
+- line 34: `model_num_classes` change to `1000`.
+- line 36: `mode` change to `train`.
+- line 50: `pretrained_model_weights_path` change to `./results/pretrained_models/InceptionV4-ImageNet_1K-2069673f.pth.tar`.
 
 ```bash
 python3 train.py
@@ -63,10 +67,12 @@ python3 train.py
 
 ### Resume train model
 
-- line 29: `model_arch_name` change to `inception_v3`.
-- line 31: `model_num_classes` change to `1000`.
-- line 33: `mode` change to `train`.
-- line 50: `resume` change to `./samples/inception_v3-ImageNet_1K/epoch_xxx.pth.tar`.
+- line 29: `model_arch_name` change to `inception_v4`.
+- line 31: `model_mean_parameters` change to `1000`.
+- line 32: `model_mean_parameters` change to `1000`.
+- line 34: `model_num_classes` change to `1000`.
+- line 36: `mode` change to `train`.
+- line 53: `resume` change to `./samples/inception_v4-ImageNet_1K/epoch_xxx.pth.tar`.
 
 ```bash
 python3 train.py
@@ -78,12 +84,13 @@ Source of original paper results: [https://arxiv.org/pdf/1602.07261v2.pdf](https
 
 In the following table, the top-x error value in `()` indicates the result of the project, and `-` indicates no test.
 
-|    Model     |   Dataset   | Top-1 error (val) | Top-5 error (val) |
-|:------------:|:-----------:|:-----------------:|:-----------------:|
-| inception_v3 | ImageNet_1K | 21.2%(**22.7%**)  |  5.6%(**6.5%**)   |
+|         Model          |   Dataset   | Top-1 error (val) | Top-5 error (val) |
+|:----------------------:|:-----------:|:-----------------:|:-----------------:|
+|      inception_v4      | ImageNet_1K | 20.0%(**22.2%**)  |  5.0%(**6.1%**)   |
+| inception_v4-resnet_v2 | ImageNet_1K |   19.9%(**-**)    |    4.9%(**-**)    |
 
 ```bash
-# Download `InceptionV3-ImageNet_1K-32d70693.pth.tar` weights to `./results/pretrained_models`
+# Download `InceptionV4-ImageNet_1K-2069673f.pth.tar` weights to `./results/pretrained_models`
 # More detail see `README.md<Download weights>`
 python3 ./inference.py 
 ```
@@ -95,13 +102,13 @@ Input:
 Output:
 
 ```text
-Build `inception_v3` model successfully.
-Load `inception_v3` model weights `/InceptionV3-PyTorch/results/pretrained_models/InceptionV3-ImageNet_1K-32d70693.pth.tar` successfully.
-tench, Tinca tinca                                                          (90.35%)
-barracouta, snoek                                                           (1.21%)
-rock beauty, Holocanthus tricolor                                           (0.06%)
-armadillo                                                                   (0.04%)
-electric ray, crampfish, numbfish, torpedo                                  (0.04%)
+Build `inception_v4` model successfully.
+Load `inception_v4` model weights `/InceptionV4-PyTorch/results/pretrained_models/InceptionV4-ImageNet_1K-2069673f.pth.tar` successfully.
+tench, Tinca tinca                                                          (85.94%)
+barracouta, snoek                                                           (1.43%)
+reel                                                                        (0.18%)
+gar, garfish, garpike, billfish, Lepisosteus osseus                         (0.16%)
+goldfish, Carassius auratus                                                 (0.09%)
 ```
 
 ## Contributing

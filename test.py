@@ -27,16 +27,18 @@ model_names = sorted(
 
 
 def build_model() -> nn.Module:
-    googlenet_model = model.__dict__[config.model_arch_name](num_classes=config.model_num_classes,
-                                                             aux_logits=False,
-                                                             transform_input=True)
+    googlenet_model = model.__dict__[config.model_arch_name](num_classes=config.model_num_classes)
     googlenet_model = googlenet_model.to(device=config.device, memory_format=torch.channels_last)
 
     return googlenet_model
 
 
 def load_dataset() -> CUDAPrefetcher:
-    test_dataset = ImageDataset(config.test_image_dir, config.image_size, "Test")
+    test_dataset = ImageDataset(config.test_image_dir,
+                                config.image_size,
+                                config.model_mean_parameters,
+                                config.model_std_parameters,
+                                "Test")
     test_dataloader = DataLoader(test_dataset,
                                  batch_size=config.batch_size,
                                  shuffle=False,

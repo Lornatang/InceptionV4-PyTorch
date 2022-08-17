@@ -51,7 +51,7 @@ class ImageDataset(Dataset):
             and the verification data set is not for data enhancement.
     """
 
-    def __init__(self, image_dir: str, image_size: int, mode: str) -> None:
+    def __init__(self, image_dir: str, image_size: int, mean: list, std: list, mode: str) -> None:
         super(ImageDataset, self).__init__()
         # Iterate over all image paths
         self.image_file_paths = glob(f"{image_dir}/*/*")
@@ -81,7 +81,7 @@ class ImageDataset(Dataset):
 
         self.post_transform = transforms.Compose([
             transforms.ConvertImageDtype(torch.float),
-            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+            transforms.Normalize(mean, std)
         ])
 
     def __getitem__(self, batch_index: int) -> [torch.Tensor, int]:

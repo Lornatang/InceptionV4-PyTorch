@@ -122,8 +122,16 @@ def main():
 
 def load_dataset() -> [CUDAPrefetcher, CUDAPrefetcher]:
     # Load train, test and valid datasets
-    train_dataset = ImageDataset(config.train_image_dir, config.image_size, "Train")
-    valid_dataset = ImageDataset(config.valid_image_dir, config.image_size, "Valid")
+    train_dataset = ImageDataset(config.train_image_dir,
+                                 config.image_size,
+                                 config.model_mean_parameters,
+                                 config.model_std_parameters,
+                                 "Train")
+    valid_dataset = ImageDataset(config.valid_image_dir,
+                                 config.image_size,
+                                 config.model_mean_parameters,
+                                 config.model_std_parameters,
+                                 "Valid")
 
     # Generator all dataloader
     train_dataloader = DataLoader(train_dataset,
