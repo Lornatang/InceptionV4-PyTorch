@@ -1,13 +1,13 @@
-# InceptionV3-PyTorch
+# InceptionV4-PyTorch
 
 ## Overview
 
 This repository contains an op-for-op PyTorch reimplementation
-of [Rethinking the Inception Architecture for Computer Vision](https://arxiv.org/pdf/1512.00567v3.pdf).
+of [Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning](https://arxiv.org/pdf/1602.07261v2.pdf).
 
 ## Table of contents
 
-- [InceptionV3-PyTorch](#inceptionv3-pytorch)
+- [InceptionV4-PyTorch](#inceptionv4-pytorch)
     - [Overview](#overview)
     - [Table of contents](#table-of-contents)
     - [Download weights](#download-weights)
@@ -19,7 +19,7 @@ of [Rethinking the Inception Architecture for Computer Vision](https://arxiv.org
     - [Result](#result)
     - [Contributing](#contributing)
     - [Credit](#credit)
-        - [Rethinking the Inception Architecture for Computer Vision](#rethinking-the-inception-architecture-for-computer-vision)
+        - [Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning](#inception-v4-inception-resnet-and-the-impact-of-residual-connections-on-learning)
 
 ## Download weights
 
@@ -74,7 +74,7 @@ python3 train.py
 
 ## Result
 
-Source of original paper results: [https://arxiv.org/pdf/1512.00567v3.pdf](https://arxiv.org/pdf/1512.00567v3.pdf))
+Source of original paper results: [https://arxiv.org/pdf/1602.07261v2.pdf](https://arxiv.org/pdf/1602.07261v2.pdf))
 
 In the following table, the top-x error value in `()` indicates the result of the project, and `-` indicates no test.
 
@@ -113,9 +113,9 @@ I look forward to seeing what the community does with these models!
 
 ### Credit
 
-#### Rethinking the Inception Architecture for Computer Vision
+#### Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning
 
-*Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, Zbigniew Wojna*
+*Christian Szegedy, Sergey Ioffe, Vincent Vanhoucke, Alex Alemi*
 
 ##### Abstract
 
