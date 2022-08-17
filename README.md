@@ -87,7 +87,7 @@ In the following table, the top-x error value in `()` indicates the result of th
 |         Model          |   Dataset   | Top-1 error (val) | Top-5 error (val) |
 |:----------------------:|:-----------:|:-----------------:|:-----------------:|
 |      inception_v4      | ImageNet_1K | 20.0%(**22.2%**)  |  5.0%(**6.1%**)   |
-| inception_v4-resnet_v2 | ImageNet_1K |   19.9%(**-**)    |    4.9%(**-**)    |
+| inception_v4-resnet_v2 | ImageNet_1K | 19.9%(**23.5%**)  |  4.9%(**6.6%**)   |
 
 ```bash
 # Download `InceptionV4-ImageNet_1K-2069673f.pth.tar` weights to `./results/pretrained_models`
