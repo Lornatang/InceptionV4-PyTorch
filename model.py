@@ -388,8 +388,8 @@ class InceptionB(nn.Module):
         self.branch_0 = BasicConv2d(in_channels, 384, kernel_size=(1, 1), stride=(1, 1), padding=(0, 0))
         self.branch_1 = nn.Sequential(
             BasicConv2d(in_channels, 192, kernel_size=(1, 1), stride=(1, 1), padding=(0, 0)),
-            BasicConv2d(192, 224, kernel_size=(1, 7), stride=1, padding=(0, 3)),
-            BasicConv2d(224, 256, kernel_size=(7, 1), stride=1, padding=(3, 0)),
+            BasicConv2d(192, 224, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3)),
+            BasicConv2d(224, 256, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0)),
         )
         self.branch_2 = nn.Sequential(
             BasicConv2d(in_channels, 192, kernel_size=(1, 1), stride=(1, 1), padding=(0, 0)),
