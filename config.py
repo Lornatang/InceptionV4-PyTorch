@@ -57,9 +57,7 @@ if mode == "train":
 
     # Loss parameters
     loss_label_smoothing = 0.1
-    loss_aux3_weights = 1.0
-    loss_aux2_weights = 0.3
-    loss_aux1_weights = 0.3
+    loss_weights = 1.0
 
     # Optimizer parameter
     model_lr = 0.1

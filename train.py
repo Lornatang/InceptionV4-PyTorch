@@ -245,10 +245,7 @@ def train(
         # Mixed precision training
         with amp.autocast():
             output = model(images)
-            loss_aux3 = config.loss_aux3_weights * criterion(output[0], target)
-            loss_aux2 = config.loss_aux2_weights * criterion(output[1], target)
-            loss_aux1 = config.loss_aux1_weights * criterion(output[2], target)
-            loss = loss_aux3 + loss_aux2 + loss_aux1
+            loss = config.loss_weights * criterion(output, target)
 
         # Backpropagation
         scaler.scale(loss).backward()
@@ -260,7 +257,7 @@ def train(
         ema_model.update_parameters(model)
 
         # measure accuracy and record loss
-        top1, top5 = accuracy(output[0], target, topk=(1, 5))
+        top1, top5 = accuracy(output, target, topk=(1, 5))
         losses.update(loss.item(), batch_size)
         acc1.update(top1[0].item(), batch_size)
         acc5.update(top5[0].item(), batch_size)
